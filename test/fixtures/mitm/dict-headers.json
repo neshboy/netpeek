@@ -1,0 +1,55 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "weather.example.net",
+      "port": 443,
+      "path": "/v1/forecast?city=NYC&units=metric",
+      "http_version": "HTTP/2.0",
+      "headers": {
+        "Host": "weather.example.net",
+        "Accept": "application/json",
+        "User-Agent": "WeatherApp/3.2 (Android 14)"
+      },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "http_version": "HTTP/2.0",
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Mon, 05 Jan 2026 09:00:00 GMT"
+      },
+      "content": "{\"city\":\"NYC\",\"tempC\":4}"
+    },
+    "timestamp_start": 1767603600.123,
+    "timestamp_end": 1767603600.456
+  },
+  {
+    "request": {
+      "method": "POST",
+      "scheme": "https",
+      "host": "weather.example.net",
+      "port": 443,
+      "path": "/v1/session",
+      "http_version": "HTTP/2.0",
+      "headers": {
+        "Host": "weather.example.net",
+        "Content-Type": "application/json",
+        "User-Agent": "WeatherApp/3.2 (Android 14)"
+      },
+      "content": "{\"deviceId\":\"device-111\"}"
+    },
+    "response": {
+      "status_code": 201,
+      "http_version": "HTTP/2.0",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "content": "{\"sessionId\":\"sess-abc\"}"
+    },
+    "timestamp_start": 1767603601.0,
+    "timestamp_end": 1767603601.2
+  }
+]

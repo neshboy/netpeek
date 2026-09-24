@@ -1,0 +1,263 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "netpeek-fixture-capture",
+      "version": "1.0"
+    },
+    "entries": [
+      {
+        "startedDateTime": "2026-09-24T10:15:29.000Z",
+        "time": 210,
+        "request": {
+          "method": "GET",
+          "url": "https://httpbin.org/get?probe=netpeek",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "httpbin.org"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "netpeek-fixture-capture/1.0"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "probe",
+              "value": "netpeek"
+            }
+          ],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Thu, 24 Sep 2026 10:15:29 GMT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Server",
+              "value": "gunicorn/19.9.0"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Credentials",
+              "value": "true"
+            }
+          ],
+          "content": {
+            "size": 303,
+            "mimeType": "application/json",
+            "text": "{\n  \"args\": {\n    \"probe\": \"netpeek\"\n  },\n  \"headers\": {\n    \"Accept\": \"*/*\",\n    \"Host\": \"httpbin.org\",\n    \"User-Agent\": \"netpeek-fixture-capture/1.0\",\n    \"X-Amzn-Trace-Id\": \"Root=1-6ab4f841-61688bb62407005676751ce3\"\n  },\n  \"origin\": \"211.25.18.5\",\n  \"url\": \"https://httpbin.org/get?probe=netpeek\"\n}\n"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 303
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 210,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-24T10:15:51.000Z",
+        "time": 340,
+        "request": {
+          "method": "GET",
+          "url": "https://example.com/",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "example.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "curl/8.21.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            }
+          ],
+          "queryString": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Thu, 24 Sep 2026 10:15:51 GMT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "last-modified",
+              "value": "Tue, 22 Sep 2026 21:15:25 GMT"
+            },
+            {
+              "name": "allow",
+              "value": "GET, HEAD"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Age",
+              "value": "3783"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "HIT"
+            },
+            {
+              "name": "CF-RAY",
+              "value": "a40107c52aa413dc-KUL"
+            }
+          ],
+          "content": {
+            "size": 623,
+            "mimeType": "text/html",
+            "text": "<!doctype html><html lang=\"en\"><head><title>Example Domain</title><link rel=\"icon\" href=\"data:,\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style></head><body><div><h1>Example Domain</h1><p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p><p><a href=\"https://www.iana.org/domains/reserved\">More information...</a></p></div></body></html>"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 623
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 340,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-24T10:15:54.000Z",
+        "time": 260,
+        "request": {
+          "method": "POST",
+          "url": "https://httpbin.org/post",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "httpbin.org"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "netpeek-fixture-capture/1.0"
+            },
+            {
+              "name": "Content-Length",
+              "value": "40"
+            }
+          ],
+          "queryString": [],
+          "headersSize": -1,
+          "bodySize": 40,
+          "postData": {
+            "mimeType": "application/json",
+            "text": "{\"username\":\"alice\",\"password\":\"secret\"}"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Thu, 24 Sep 2026 10:15:54 GMT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Server",
+              "value": "gunicorn/19.9.0"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Credentials",
+              "value": "true"
+            }
+          ],
+          "content": {
+            "size": 490,
+            "mimeType": "application/json",
+            "text": "{\n  \"args\": {},\n  \"data\": \"{\\\"username\\\":\\\"alice\\\",\\\"password\\\":\\\"secret\\\"}\",\n  \"files\": {},\n  \"form\": {},\n  \"headers\": {\n    \"Accept\": \"*/*\",\n    \"Content-Length\": \"40\",\n    \"Content-Type\": \"application/json\",\n    \"Host\": \"httpbin.org\",\n    \"User-Agent\": \"netpeek-fixture-capture/1.0\",\n    \"X-Amzn-Trace-Id\": \"Root=1-6ab4f85a-2025f6f30f2232576755a10b\"\n  },\n  \"json\": {\n    \"password\": \"secret\",\n    \"username\": \"alice\"\n  },\n  \"origin\": \"211.25.18.5\",\n  \"url\": \"https://httpbin.org/post\"\n}\n"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 490
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 260,
+          "receive": 0
+        }
+      }
+    ]
+  }
+}

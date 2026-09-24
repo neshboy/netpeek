@@ -1,0 +1,5 @@
+{
+  "log": {
+    "entries": "this is a HAR-shaped object, not a mitmproxy flow array, deliberately wrong here"
+  }
+}

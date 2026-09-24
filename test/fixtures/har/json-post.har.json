@@ -1,0 +1,46 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": { "name": "Fixture", "version": "1.0" },
+    "entries": [
+      {
+        "startedDateTime": "2026-01-05T09:00:00.000Z",
+        "time": 150,
+        "request": {
+          "method": "post",
+          "url": "https://api.example.com/v1/login",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Authorization", "value": "Bearer abc.def.ghi" }
+          ],
+          "queryString": [],
+          "postData": {
+            "mimeType": "application/json",
+            "text": "{\"username\":\"alice\",\"password\":\"secret\"}"
+          },
+          "headersSize": 120,
+          "bodySize": 41
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            { "name": "Content-Type", "value": "application/json" }
+          ],
+          "content": {
+            "size": 27,
+            "mimeType": "application/json",
+            "text": "{\"token\":\"xyz\",\"ok\":true}"
+          },
+          "redirectURL": "",
+          "headersSize": 60,
+          "bodySize": 27
+        },
+        "cache": {},
+        "timings": { "send": 2, "wait": 146, "receive": 2 }
+      }
+    ]
+  }
+}

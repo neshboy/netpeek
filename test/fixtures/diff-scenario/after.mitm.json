@@ -1,0 +1,110 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "app.example.com",
+      "port": 443,
+      "path": "/home",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "app.example.com", "Accept": "text/html" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "text/html" },
+      "content": "<html>home</html>"
+    },
+    "timestamp_start": 1767786400.0
+  },
+  {
+    "request": {
+      "method": "POST",
+      "scheme": "https",
+      "host": "api.example.com",
+      "port": 443,
+      "path": "/v1/login",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "api.example.com", "Content-Type": "application/json" },
+      "content": "{\"username\":\"bob\",\"password\":\"pw1\",\"device_id\":\"dev-42\"}"
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "application/json", "X-New-Feature": "1" },
+      "content": "{\"token\":\"t1\"}"
+    },
+    "timestamp_start": 1767786401.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "cdn.example.com",
+      "port": 443,
+      "path": "/assets/app.js",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "cdn.example.com" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "application/javascript" },
+      "content": "console.log('v1');"
+    },
+    "timestamp_start": 1767786402.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "api.example.com",
+      "port": 443,
+      "path": "/v1/status",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "api.example.com" },
+      "content": null
+    },
+    "response": {
+      "status_code": 503,
+      "headers": { "Content-Type": "application/json" },
+      "content": "{\"ok\":true}"
+    },
+    "timestamp_start": 1767786403.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "tracker.new.example.com",
+      "port": 443,
+      "path": "/pixel?e=open",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "tracker.new.example.com", "User-Agent": "SomeApp/2.1" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "image/gif" },
+      "content": null
+    },
+    "timestamp_start": 1767786404.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "api.example.com",
+      "port": 443,
+      "path": "/v1/profile",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "api.example.com" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "application/json" },
+      "content": "{\"name\":\"Bob\"}"
+    },
+    "timestamp_start": 1767786405.0
+  }
+]

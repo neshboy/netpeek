@@ -1,0 +1,247 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "netpeek-fixture-capture",
+      "version": "1.0"
+    },
+    "entries": [
+      {
+        "startedDateTime": "2026-09-24T10:16:00.000Z",
+        "time": 205,
+        "request": {
+          "method": "GET",
+          "url": "https://httpbin.org/get?probe=netpeek",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "httpbin.org"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "netpeek-fixture-capture/1.0"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "probe",
+              "value": "netpeek"
+            }
+          ],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Thu, 24 Sep 2026 10:16:00 GMT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Server",
+              "value": "gunicorn/19.9.0"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Credentials",
+              "value": "true"
+            }
+          ],
+          "content": {
+            "size": 303,
+            "mimeType": "application/json",
+            "text": "{\n  \"args\": {\n    \"probe\": \"netpeek\"\n  },\n  \"headers\": {\n    \"Accept\": \"*/*\",\n    \"Host\": \"httpbin.org\",\n    \"User-Agent\": \"netpeek-fixture-capture/1.0\",\n    \"X-Amzn-Trace-Id\": \"Root=1-6ab4f841-61688bb62407005676751ce3\"\n  },\n  \"origin\": \"211.25.18.5\",\n  \"url\": \"https://httpbin.org/get?probe=netpeek\"\n}\n"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 303
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 205,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-24T10:16:04.000Z",
+        "time": 275,
+        "request": {
+          "method": "POST",
+          "url": "https://httpbin.org/post",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "httpbin.org"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "netpeek-fixture-capture/1.0"
+            },
+            {
+              "name": "Content-Length",
+              "value": "61"
+            }
+          ],
+          "queryString": [],
+          "headersSize": -1,
+          "bodySize": 61,
+          "postData": {
+            "mimeType": "application/json",
+            "text": "{\"username\":\"alice\",\"password\":\"secret\",\"device_id\":\"abc123\"}"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Thu, 24 Sep 2026 10:16:04 GMT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Server",
+              "value": "gunicorn/19.9.0"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Credentials",
+              "value": "true"
+            }
+          ],
+          "content": {
+            "size": 542,
+            "mimeType": "application/json",
+            "text": "{\n  \"args\": {},\n  \"data\": \"{\\\"username\\\":\\\"alice\\\",\\\"password\\\":\\\"secret\\\",\\\"device_id\\\":\\\"abc123\\\"}\",\n  \"files\": {},\n  \"form\": {},\n  \"headers\": {\n    \"Accept\": \"*/*\",\n    \"Content-Length\": \"61\",\n    \"Content-Type\": \"application/json\",\n    \"Host\": \"httpbin.org\",\n    \"User-Agent\": \"netpeek-fixture-capture/1.0\",\n    \"X-Amzn-Trace-Id\": \"Root=1-6ab4f864-7cad5e394ccaf05b20188f35\"\n  },\n  \"json\": {\n    \"device_id\": \"abc123\",\n    \"password\": \"secret\",\n    \"username\": \"alice\"\n  },\n  \"origin\": \"211.25.18.5\",\n  \"url\": \"https://httpbin.org/post\"\n}\n"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 542
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 275,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-24T10:16:06.000Z",
+        "time": 190,
+        "request": {
+          "method": "GET",
+          "url": "https://httpbin.org/headers",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "httpbin.org"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "netpeek-fixture-capture/1.0"
+            }
+          ],
+          "queryString": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "cookies": [],
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Thu, 24 Sep 2026 10:16:06 GMT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Server",
+              "value": "gunicorn/19.9.0"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Credentials",
+              "value": "true"
+            }
+          ],
+          "content": {
+            "size": 186,
+            "mimeType": "application/json",
+            "text": "{\n  \"headers\": {\n    \"Accept\": \"*/*\",\n    \"Host\": \"httpbin.org\",\n    \"User-Agent\": \"netpeek-fixture-capture/1.0\",\n    \"X-Amzn-Trace-Id\": \"Root=1-6ab4f866-3603926a098e0f762090f125\"\n  }\n}\n"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 186
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 190,
+          "receive": 0
+        }
+      }
+    ]
+  }
+}

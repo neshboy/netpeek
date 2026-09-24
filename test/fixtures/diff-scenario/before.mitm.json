@@ -1,0 +1,92 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "app.example.com",
+      "port": 443,
+      "path": "/home",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "app.example.com", "Accept": "text/html" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "text/html" },
+      "content": "<html>home</html>"
+    },
+    "timestamp_start": 1767700000.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "analytics.old.example.com",
+      "port": 443,
+      "path": "/collect?ev=view",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "analytics.old.example.com", "User-Agent": "SomeApp/2.0" },
+      "content": null
+    },
+    "response": {
+      "status_code": 204,
+      "headers": {},
+      "content": null
+    },
+    "timestamp_start": 1767700001.0
+  },
+  {
+    "request": {
+      "method": "POST",
+      "scheme": "https",
+      "host": "api.example.com",
+      "port": 443,
+      "path": "/v1/login",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "api.example.com", "Content-Type": "application/json" },
+      "content": "{\"username\":\"bob\",\"password\":\"pw1\"}"
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "application/json" },
+      "content": "{\"token\":\"t1\"}"
+    },
+    "timestamp_start": 1767700002.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "cdn.example.com",
+      "port": 443,
+      "path": "/assets/app.js",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "cdn.example.com" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "application/javascript" },
+      "content": "console.log('v1');"
+    },
+    "timestamp_start": 1767700003.0
+  },
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "https",
+      "host": "api.example.com",
+      "port": 443,
+      "path": "/v1/status",
+      "http_version": "HTTP/2.0",
+      "headers": { "Host": "api.example.com" },
+      "content": null
+    },
+    "response": {
+      "status_code": 200,
+      "headers": { "Content-Type": "application/json" },
+      "content": "{\"ok\":true}"
+    },
+    "timestamp_start": 1767700004.0
+  }
+]

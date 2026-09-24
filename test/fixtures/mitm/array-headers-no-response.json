@@ -1,0 +1,21 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "scheme": "http",
+      "host": "telemetry.example.org",
+      "port": 80,
+      "path": "/ping",
+      "http_version": "HTTP/1.1",
+      "headers": [
+        ["Host", "telemetry.example.org"],
+        ["User-Agent", "SomeApp/1.0"],
+        ["X-Custom-Trace", "one"],
+        ["X-Custom-Trace", "two"]
+      ],
+      "content": null
+    },
+    "response": null,
+    "timestamp_start": 1767603700.0
+  }
+]
