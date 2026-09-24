@@ -1,0 +1,42 @@
+{
+  "name": "netpeek",
+  "version": "1.0.0",
+  "description": "A packaged network-traffic-diffing toolkit for privacy auditing. Point it at two captured traffic sessions (HAR or mitmproxy flow JSON) and get a plain-English diff of every domain and endpoint contacted.",
+  "type": "module",
+  "license": "MIT",
+  "author": "NetPeek contributors",
+  "bin": {
+    "netpeek": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "privacy",
+    "har",
+    "mitmproxy",
+    "network",
+    "diff",
+    "audit",
+    "cli"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.5.4",
+    "vitest": "^5.0.1"
+  }
+}
