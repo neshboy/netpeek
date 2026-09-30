@@ -45,7 +45,6 @@ export function diffJsonValues(
   if (a === undefined && b === undefined) return [];
   if (a === undefined) return [{ path, kind: "added", after: b }];
   if (b === undefined) return [{ path, kind: "removed", before: a }];
-  if (deepEqualJson(a, b)) return [];
 
   if (isPlainObject(a) && isPlainObject(b)) {
     const entries: JsonDiffEntry[] = [];
@@ -66,7 +65,10 @@ export function diffJsonValues(
     return entries;
   }
 
-  // Type mismatch (e.g. object vs array, or object vs primitive) or
-  // differing primitive values: report as a single "changed" leaf.
+  // Type mismatch (e.g. object vs array, or object vs primitive) or a leaf
+  // comparison (both primitives): this is the only place deepEqualJson runs
+  // now, so an equal subtree gets exactly one pass (via the recursion above)
+  // instead of one whole-subtree pass here plus a second one per-key/per-index.
+  if (deepEqualJson(a, b)) return [];
   return [{ path, kind: "changed", before: a, after: b }];
 }
