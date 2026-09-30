@@ -94,6 +94,25 @@ export function looksLikeHar(data: unknown): data is HarFile {
   return Array.isArray(entries);
 }
 
+/**
+ * Per the HAR 1.2 spec, postData.text is optional: a client may instead
+ * record a parsed representation of a url-encoded/multipart body as
+ * postData.params[]. When text is absent but params are present, synthesize
+ * an equivalent url-encoded raw body so form-submitted fields (e.g. login
+ * credentials sent as application/x-www-form-urlencoded) still get diffed
+ * instead of silently normalizing to "no request body".
+ */
+function requestBodyRawFromPostData(postData: HarPostData | undefined): string | undefined {
+  if (!postData) return undefined;
+  if (postData.text !== undefined) return postData.text;
+  if (postData.params && postData.params.length > 0) {
+    return postData.params
+      .map((p) => `${encodeURIComponent(p.name)}=${encodeURIComponent(p.value ?? "")}`)
+      .join("&");
+  }
+  return undefined;
+}
+
 function decodeHarContentText(content: HarContent | undefined): string | undefined {
   if (!content || content.text === undefined) {
     return undefined;
@@ -126,6 +145,11 @@ export function parseHar(rawJson: unknown, sourceFile: string): NormalizedCaptur
         `${sourceFile}: log.entries[${index}].request.url is required by the HAR 1.2 spec but was missing`,
       );
     }
+    if (typeof req.method !== "string" || req.method.length === 0) {
+      throw new HarFormatError(
+        `${sourceFile}: log.entries[${index}].request.method is required by the HAR 1.2 spec but was missing`,
+      );
+    }
 
     let url: URL;
     try {
@@ -143,7 +167,7 @@ export function parseHar(rawJson: unknown, sourceFile: string): NormalizedCaptur
       (res?.headers ?? []).map((h) => [h.name, h.value] as [string, string]),
     );
 
-    const requestBodyRaw = req.postData?.text;
+    const requestBodyRaw = requestBodyRawFromPostData(req.postData);
     const requestBodyMimeType = req.postData?.mimeType;
     const requestBodyJson = tryParseJsonBody(requestBodyRaw, requestBodyMimeType);
 
@@ -153,7 +177,7 @@ export function parseHar(rawJson: unknown, sourceFile: string): NormalizedCaptur
 
     const normalized: NormalizedRequest = {
       index,
-      method: (req.method ?? "GET").toUpperCase(),
+      method: req.method.toUpperCase(),
       scheme: url.protocol.replace(":", ""),
       host: url.hostname,
       port: url.port ? Number(url.port) : undefined,

@@ -5,7 +5,12 @@ import type { HeaderMap } from "../types.js";
  * [name, value] pairs, preserving repeated headers (e.g. Set-Cookie).
  */
 export function headerMapFromPairs(pairs: Array<[string, string]>): HeaderMap {
-  const map: HeaderMap = {};
+  // Object.create(null) (rather than a {} literal) avoids inheriting
+  // Object.prototype members: a captured header literally named
+  // "__proto__", "constructor", "toString", etc. would otherwise make
+  // map[name] resolve to a truthy inherited value, and .push()-ing onto it
+  // would throw instead of just adding the header like any other name.
+  const map: HeaderMap = Object.create(null);
   for (const [rawName, value] of pairs) {
     const name = rawName.toLowerCase();
     const existing = map[name];

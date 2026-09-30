@@ -45,14 +45,18 @@ def response(flow: http.HTTPFlow) -> None:
                 "port": flow.request.port,
                 "path": flow.request.path,  # includes the query string
                 "http_version": flow.request.http_version,
-                "headers": dict(flow.request.headers),
+                # list of [name, value] pairs, not dict(...): a dict would
+                # silently collapse repeated header names (e.g. multiple
+                # Set-Cookie headers) down to only the last value.
+                # items(multi=True) preserves duplicates.
+                "headers": list(flow.request.headers.items(multi=True)),
                 "content": flow.request.get_text(strict=False),
             },
             "response": (
                 {
                     "status_code": flow.response.status_code,
                     "http_version": flow.response.http_version,
-                    "headers": dict(flow.response.headers),
+                    "headers": list(flow.response.headers.items(multi=True)),
                     "content": flow.response.get_text(strict=False),
                 }
                 if flow.response is not None
